@@ -91,3 +91,7 @@ export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd.."
 zstyle :omz:plugins:ssh-agent identities id_rsa kob/id_rsa
 ZSH_TMUX_AUTOSTART="true"
 source <(kubectl completion zsh)
+
+if command -v tmux>/dev/null; then
+  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+fi
