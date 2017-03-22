@@ -52,7 +52,7 @@ DEFAULT_USER="devuser"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git aws colorize ssh-agent tmux)
+plugins=(git aws colorize ssh-agent tmux z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -91,4 +91,3 @@ export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd.."
 zstyle :omz:plugins:ssh-agent identities id_rsa kob/id_rsa
 ZSH_TMUX_AUTOSTART="true"
 source <(kubectl completion zsh)
-
