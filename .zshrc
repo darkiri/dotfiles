@@ -9,7 +9,7 @@ PATH=$INTELLIJ_HOME:$PATH
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel9k/powerlevel9k"
 DEFAULT_USER="devuser"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -54,7 +54,21 @@ DEFAULT_USER="devuser"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git aws colorize ssh-agent tmux z)
+plugins=(
+  git
+  aws
+  colorize
+  ssh-agent
+  tmux
+  z
+  zsh-autosuggestions
+  docker
+  encode64
+  history
+  osx
+  sbt
+  scala
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -92,6 +106,8 @@ export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd.."
 
 zstyle :omz:plugins:ssh-agent identities id_rsa kob/id_rsa
 ZSH_TMUX_AUTOSTART="true"
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
 
 if command -v tmux>/dev/null; then
   [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
