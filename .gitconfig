@@ -1,0 +1,18 @@
+[alias]
+  st = status
+  co = checkout
+  br = branch
+  cm = commit
+  cmm = commit -m
+  gr = log --graph --all
+  diffw = diff --word-diff=color
+[pull]
+	rebase = true
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[diff]
+	tool = vimdiff
+[mergetool]
+	prompt = false
+	keepBackup = false
