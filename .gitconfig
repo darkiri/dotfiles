@@ -7,12 +7,12 @@
   gr = log --graph --all
   diffw = diff --word-diff=color
 [pull]
-	rebase = true
+  rebase = true
 [merge]
-	tool = vimdiff
-	conflictstyle = diff3
+  tool = vimdiff
+  conflictstyle = diff3
 [diff]
-	tool = vimdiff
+  tool = vimdiff
 [mergetool]
-	prompt = false
-	keepBackup = false
+  prompt = false
+  keepBackup = false
