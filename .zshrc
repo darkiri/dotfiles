@@ -1,8 +1,10 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=~/Library/Python/3.7/bin:~/work/selenium/:$PATH
+export INTELLIJ_HOME=/Applications/IntelliJ\ IDEA.app/Contents/MacOS
+PATH=$INTELLIJ_HOME:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/devuser/.oh-my-zsh
+  export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -90,8 +92,15 @@ export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd.."
 
 zstyle :omz:plugins:ssh-agent identities id_rsa kob/id_rsa
 ZSH_TMUX_AUTOSTART="true"
-source <(kubectl completion zsh)
 
 if command -v tmux>/dev/null; then
   [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
 fi
+
+aws_assume(){
+  tmpFile=/tmp/assume.tmp
+  awstools assume --export $tmpFile --export-profile $@ && source $tmpFile
+  rm $tmpFile
+}
+
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
