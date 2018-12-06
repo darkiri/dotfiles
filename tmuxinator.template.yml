@@ -1,0 +1,16 @@
+name: <project-name>
+root: ~/<project-name>
+
+windows:
+  - project:
+      layout: tiled
+      panes:
+        - backend:
+          - sbt run
+        - frontend:
+          - cd ui
+          - yarn run dev
+        - cd .
+        - tests:
+          - cd ui
+          - yarn test:watch
